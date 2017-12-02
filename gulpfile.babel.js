@@ -29,7 +29,7 @@ function unitTests() {
         .pipe(mocha({
             ui: 'bdd',
             reporter: 'spec',
-            compilers: [
+            require: [
                 'babel-core/register'
             ]
         }));

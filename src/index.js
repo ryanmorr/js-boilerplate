@@ -5,7 +5,6 @@ export default function fizzbuzz(n) {
         return 'Buzz';
     } else if (n % 3 === 0) {
         return 'Fizz';
-    } else {
-        return n;
     }
+    return n;
 }

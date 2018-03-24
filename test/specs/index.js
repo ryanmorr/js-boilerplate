@@ -1,4 +1,4 @@
-import fizzbuzz from '../../src/fizzbuzz';
+import fizzbuzz from '../../src/index';
 
 describe('fizzbuzz', () => {
     it('returns \'Fizz\' when the given param is a multiplier of 3', () => {

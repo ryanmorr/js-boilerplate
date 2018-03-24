@@ -8,8 +8,8 @@
 * Build for the browser using a [UMD (Universal Module Definition)](https://github.com/umdjs/umd) wrapper with [Browserify](http://browserify.org/)
 * Automated tasks using the [Gulp](http://gulpjs.com/) task runner
 * Code linting using [ESLint](http://eslint.org/)
-* Unit testing with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
-* Code coverage reports using [Istanbul](https://github.com/gotwarlost/istanbul) and [Isparta](https://github.com/douglasduteil/isparta).
+* Automated unit testing with the [Karma](https://karma-runner.github.io) test runner and [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
+* Code coverage reports using [Istanbul](https://github.com/gotwarlost/istanbul).
 * Code minification and optimization using [UglifyJS 2](https://github.com/mishoo/UglifyJS2)
 * Automatically generates [source maps](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info)
 * Includes `.travis.yml` file to support continuous integration with [Travis CI](https://travis-ci.org/)

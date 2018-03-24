@@ -5,35 +5,42 @@ import uglify from 'gulp-uglify';
 import header from 'gulp-header';
 import rename from 'gulp-rename';
 import sourcemaps from 'gulp-sourcemaps';
-import mocha from 'gulp-mocha';
-import istanbul from 'gulp-istanbul';
-import { Instrumenter } from 'isparta';
 import browserify from 'browserify';
 import babelify from 'babelify';
 import del from 'del';
 import source from 'vinyl-source-stream';
 import buffer from 'vinyl-buffer';
+import { Server } from 'karma';
 
-const banner = '/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */\n';
+const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */\n`;
 
 const config = {
     files: './src/**/*.js',
-    entryFile: './src/project.js',
-    outputFile: 'project.js',
+    entryFile: './src/index.js',
+    outputFile: `${pkg.name}.js`,
     outputDir: './dist/',
-    specs: './test/*.js'
+    specs: './test/specs/**/*.js'
 };
 
-function unitTests() {
-    return gulp.src(config.specs)
-        .pipe(mocha({
-            ui: 'bdd',
-            reporter: 'spec',
-            require: [
-                'babel-core/register'
-            ]
-        }));
-}
+const karmaConfig = {
+    basePath: __dirname,
+    frameworks: ['browserify', 'mocha', 'chai', 'sinon'],
+    files: [config.test.specs],
+    preprocessors: {[config.test.specs]: ['browserify']},
+    browserify: {
+        debug: true,
+        transform: [
+            ['babelify', {plugins: ['istanbul']}]
+        ]
+    },
+    coverageReporter: {
+        type : 'html',
+        dir : './test/coverage/'
+    },
+    browsers: ['ChromeHeadless'],
+    autoWatch: false,
+    singleRun: true,
+};
 
 gulp.task('clean', () => {
     return del.sync([config.outputDir]);
@@ -63,19 +70,13 @@ gulp.task('lint', () => {
 });
 
 gulp.task('test', () => {
-    return unitTests();
+    karmaConfig.reporters = ['mocha'];
+    new Server(karmaConfig, exit).start();
 });
 
 gulp.task('coverage', () => {
-    return gulp.src(config.files)
-        .pipe(istanbul({
-            includeUntested: true,
-            instrumenter: Instrumenter
-        }))
-        .pipe(istanbul.hookRequire())
-        .on('finish', () => {
-            unitTests().pipe(istanbul.writeReports());
-        });
+    karmaConfig.reporters = ['mocha', 'coverage'];
+    new Server(karmaConfig, exit).start();
 });
 
 gulp.task('watch', () => {

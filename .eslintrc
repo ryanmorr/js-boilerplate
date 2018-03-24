@@ -13,7 +13,9 @@
   "globals": {
     "require": true,
     "define": true,
-    "module": true
+    "module": true,
+    "expect": true,
+    "sinon": true
   },
   "rules": {
     ////////// Errors //////////

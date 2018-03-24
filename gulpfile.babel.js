@@ -71,12 +71,16 @@ gulp.task('lint', () => {
 
 gulp.task('test', () => {
     karmaConfig.reporters = ['mocha'];
-    new Server(karmaConfig, exit).start();
+    new Server(karmaConfig, (code) => {
+        process.exit(code);
+    }).start();
 });
 
 gulp.task('coverage', () => {
     karmaConfig.reporters = ['mocha', 'coverage'];
-    new Server(karmaConfig, exit).start();
+    new Server(karmaConfig, (code) => {
+        process.exit(code);
+    }).start();
 });
 
 gulp.task('watch', () => {

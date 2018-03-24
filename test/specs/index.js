@@ -7,6 +7,12 @@ describe('fizzbuzz', () => {
         expect(fizzbuzz(9)).to.equal('Fizz');
     });
 
+    it('returns \'Buzz\' when the given param is a multiplier of 5', () => {
+        expect(fizzbuzz(5)).to.equal('Buzz');
+        expect(fizzbuzz(10)).to.equal('Buzz');
+        expect(fizzbuzz(20)).to.equal('Buzz');
+    });
+
     it('returns \'FizzBuzz\' when the given param is a multiplier of 3 and 5', () => {
         expect(fizzbuzz(15)).to.equal('FizzBuzz');
         expect(fizzbuzz(30)).to.equal('FizzBuzz');

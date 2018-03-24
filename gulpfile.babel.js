@@ -25,8 +25,8 @@ const config = {
 const karmaConfig = {
     basePath: __dirname,
     frameworks: ['browserify', 'mocha', 'chai', 'sinon'],
-    files: [config.test.specs],
-    preprocessors: {[config.test.specs]: ['browserify']},
+    files: [config.specs],
+    preprocessors: {[config.specs]: ['browserify']},
     browserify: {
         debug: true,
         transform: [
@@ -34,12 +34,12 @@ const karmaConfig = {
         ]
     },
     coverageReporter: {
-        type : 'html',
-        dir : './test/coverage/'
+        type: 'html',
+        dir: './test/coverage/'
     },
     browsers: ['ChromeHeadless'],
     autoWatch: false,
-    singleRun: true,
+    singleRun: true
 };
 
 gulp.task('clean', () => {

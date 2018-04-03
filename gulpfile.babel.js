@@ -24,7 +24,7 @@ const config = {
 
 const karmaConfig = {
     basePath: __dirname,
-    frameworks: ['browserify', 'mocha', 'chai', 'sinon'],
+    frameworks: ['browserify', 'mocha', 'chai', 'sinon', 'source-map-support'],
     files: [config.specs],
     preprocessors: {[config.specs]: ['browserify']},
     browserify: {

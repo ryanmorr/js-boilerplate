@@ -1,37 +1,29 @@
-# ES6 Boilerplate
+# es6-boilerplate
 
-> Minimal boilerplate for ES6 (ES2015) JavaScript projects.
+> Minimal boilerplate for Node.js and univeral ES6 (ES2015) JavaScript projects.
 
 ## Features
 
-* [ES6](http://www.ecma-international.org/ecma-262/6.0/) syntax using the [Babel transpiler](https://babeljs.io/)
-* Build for the browser using a [UMD (Universal Module Definition)](https://github.com/umdjs/umd) wrapper with [Browserify](http://browserify.org/)
-* Automated tasks using the [Gulp](http://gulpjs.com/) task runner
-* Code linting using [ESLint](http://eslint.org/)
-* Automated unit testing with the [Karma](https://karma-runner.github.io) test runner and [Headless Chrome](https://developers.google.com/web/updates/2017/04/headless-chrome) with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
-* Code coverage reports using [Istanbul](https://github.com/gotwarlost/istanbul).
-* Code minification and optimization using [UglifyJS 2](https://github.com/mishoo/UglifyJS2)
-* Automatically generates [source maps](https://github.com/ryanseddon/source-map/wiki/Source-maps:-languages,-tools-and-other-info)
+* Transpiles [ES6](http://www.ecma-international.org/ecma-262/6.0/) syntax using [Babel](https://babeljs.io/)
+* Uses [Rollup](https://rollupjs.org) to bundle modules and generates 3 builds for [CJS (CommonJS)](http://www.commonjs.org/), [ESM (ES Modules)](https://v8.dev/features/modules), and [UMD (Universal Module Definition)](https://github.com/umdjs/umd)
+* Code linting courtesy of [ESLint](http://eslint.org/)
+* Unit testing with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
+* Code minification via [babel-minify](https://github.com/babel/minify)
+* Automatically generates inline [source maps](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/preview#)
 * Includes `.travis.yml` file to support continuous integration with [Travis CI](https://travis-ci.org/)
 * Automatically includes a (configurable) banner to the distributed builds
 
 ## Setup Guide
 
 1. Run `npm install` to install the developmental dependencies
-2. If you don't have Gulp installed globally, run `npm install -g gulp` to do so
-3. Open `package.json` and change the relevant fields: `name`, `description`, `homepage`, etc.
-4. Open `gulpfile.babel.js` and change the `config` variable to reflect the directory structure and filenames you prefer
-5. If you do change the `config` variable, ensure you mirror the changes in the directory and files
-5. Edit `.eslintrc` to change the linting rules to suit your preferences
+2. Open `package.json` and change the relevant fields: `name`, `description`, `homepage`, etc.
+3. Open `rollup.config.js` and make the necessary changes to reflect your preferences
 
-## Gulp Tasks
+## NPM Tasks
 
-* `gulp lint` - Run ESLint against source files, test specs, and the gulpfile
-* `gulp test` - Run Mocha unit tests
-* `gulp coverage` - Run Mocha unit tests and generate code coverage reports
-* `gulp build` - Transpile ES6 to ES5, bundle, wrap in UMD, minify, generate source map, and write to `dist` directory
-* `gulp watch` - Watch for changes in files and automatically run `gulp lint` and `gulp test` tasks
-* `gulp` - Default tasks, runs `gulp lint`, `gulp coverage`, `gulp build`, and `gulp watch`
+* `npm test` - Run unit tests
+* `npm run lint` - Lint source files and test specs
+* `npm run build` - Transpile, bundle, minify, generate source maps, and create distributed builds in `dist` directory
 
 ## License
 

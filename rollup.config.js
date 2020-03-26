@@ -13,20 +13,17 @@ export default {
             banner,
             name: 'foo',
             file: pkg.browser,
-            format: 'umd',
-            sourcemap: 'inline'
+            format: 'umd'
         },
         {
             banner,
             file: pkg.main,
-            format: 'cjs',
-            sourcemap: 'inline'
+            format: 'cjs'
         },
         {
             banner,
             file: pkg.module,
-            format: 'esm',
-            sourcemap: 'inline'
+            format: 'esm'
         }
     ],
     plugins: [

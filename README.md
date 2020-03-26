@@ -9,7 +9,6 @@
 * Code linting courtesy of [ESLint](http://eslint.org/)
 * Unit testing with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
 * Code minification via [babel-minify](https://github.com/babel/minify)
-* Automatically generates inline [source maps](https://docs.google.com/document/d/1U1RGAehQwRypUTovF1KRlpiOFze0b-_2gc6fAH0KY0k/preview#)
 * Includes `.travis.yml` file to support continuous integration with [Travis CI](https://travis-ci.org/)
 * Automatically includes a (configurable) banner to the distributed builds
 

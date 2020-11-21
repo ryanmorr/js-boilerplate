@@ -1,6 +1,6 @@
 import { expect } from 'chai';
 import sinon from 'sinon';
-import foo from '../../src/index';
+import { foo } from '../../src/index';
 
 describe('foo', () => {
     it('should return foo', () => {

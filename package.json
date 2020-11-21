@@ -1,7 +1,7 @@
 {
   "name": "es6-boilerplate",
   "description": "Minimal boilerplate for Node.js and universal ES6 (ES2015) JavaScript projects",
-  "version": "1.1.0",
+  "version": "1.2.0",
   "license": "Unlicense",
   "author": "Ryan Morr",
   "homepage": "https://github.com/ryanmorr/es6-boilerplate",
@@ -10,27 +10,27 @@
   "publishConfig": {
     "access": "public"
   },
-  "main": "dist/foo.cjs.js",
-  "module": "dist/foo.esm.js",
-  "browser": "dist/foo.umd.js",
+  "main": "dist/CHANGEME.min.cjs.js",
+  "module": "dist/CHANGEME.min.esm.js",
+  "browser": "dist/CHANGEME.min.umd.js",
   "scripts": {
-    "lint": "./node_modules/.bin/eslint src/** test/specs/**",
+    "lint": "eslint src/** test/specs/**",
     "test": "mocha test/specs/**/*.js --require @babel/register --reporter spec",
     "build": "rollup -c"
   },
   "devDependencies": {
-    "@babel/core": "^7.4.3",
-    "@babel/preset-env": "^7.4.3",
-    "@babel/register": "^7.4.4",
-    "babel-eslint": "^10.0.1",
+    "@babel/core": "^7.12.7",
+    "@babel/preset-env": "^7.12.7",
+    "@babel/register": "^7.12.1",
+    "@rollup/plugin-babel": "^5.2.1",
+    "@rollup/plugin-commonjs": "^16.0.0",
+    "@rollup/plugin-node-resolve": "^10.0.0",
+    "babel-eslint": "^10.1.0",
     "chai": "^4.2.0",
-    "eslint": "^5.16.0",
-    "mocha": "^6.1.3",
-    "rollup": "^1.10.0",
-    "rollup-plugin-babel": "^4.3.2",
-    "rollup-plugin-babel-minify": "^8.0.0",
-    "rollup-plugin-commonjs": "^9.3.4",
-    "rollup-plugin-node-resolve": "^4.2.3",
-    "sinon": "^7.3.2"
+    "eslint": "^7.14.0",
+    "mocha": "^8.2.1",
+    "rollup": "^2.33.3",
+    "rollup-plugin-terser": "^7.0.2",
+    "sinon": "^9.2.1"
   }
 }

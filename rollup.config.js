@@ -1,37 +1,22 @@
 import pkg from './package.json';
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import minify from 'rollup-plugin-babel-minify';
+import { nodeResolve } from '@rollup/plugin-node-resolve';
+import babel from '@rollup/plugin-babel';
+import commonjs from '@rollup/plugin-commonjs';
+import { terser } from 'rollup-plugin-terser';
 
 const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */`;
 
 export default {
-    input: 'src/index.js',
-    output: [
-        {
-            banner,
-            name: 'foo',
-            file: pkg.browser,
-            format: 'umd'
-        },
-        {
-            banner,
-            file: pkg.main,
-            format: 'cjs'
-        },
-        {
-            banner,
-            file: pkg.module,
-            format: 'esm'
-        }
-    ],
-    plugins: [
-        resolve(),
-        babel({
-            exclude: 'node_modules/**'
-        }),
-        commonjs(),
-        minify()
-    ]
+  input: 'src/index.js',
+  output: [
+    { format: 'umd', file: pkg.browser, name: pkg.name, banner },
+    { format: 'cjs', file: pkg.main, banner },
+    { format: 'esm', file: pkg.module, banner }
+  ],
+  plugins: [
+    nodeResolve(),
+    babel({ exclude: 'node_modules/**', babelHelpers: 'bundled' }),
+    commonjs(),
+    terser()
+  ]
 };

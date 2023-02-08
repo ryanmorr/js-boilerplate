@@ -1,8 +1,7 @@
-import pkg from './package.json';
-import babel from 'rollup-plugin-babel';
-import resolve from 'rollup-plugin-node-resolve';
-import commonjs from 'rollup-plugin-commonjs';
-import minify from 'rollup-plugin-babel-minify';
+import pkg from './package.json' assert { type: "json" };
+import resolve from '@rollup/plugin-node-resolve';
+import commonjs from '@rollup/plugin-commonjs';
+import terser from '@rollup/plugin-terser';
 
 const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */`;
 
@@ -11,7 +10,7 @@ export default {
     output: [
         {
             banner,
-            name: 'foo',
+            name: '<foo>',
             file: pkg.browser,
             format: 'umd'
         },
@@ -28,10 +27,7 @@ export default {
     ],
     plugins: [
         resolve(),
-        babel({
-            exclude: 'node_modules/**'
-        }),
         commonjs(),
-        minify()
+        terser()
     ]
 };

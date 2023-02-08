@@ -1,14 +1,13 @@
-# es6-boilerplate
+# js-boilerplate
 
-> Minimal boilerplate for Node.js and universal ES6 (ES2015) JavaScript projects.
+> Minimal boilerplate for Node.js and universal JavaScript projects.
 
 ## Features
 
-* Transpiles [ES6 (ES2015)](http://www.ecma-international.org/ecma-262/6.0/) syntax using [Babel](https://babeljs.io/)
-* Uses [Rollup](https://rollupjs.org) to bundle modules and generates 3 builds for [CJS (CommonJS)](http://www.commonjs.org/), [ESM (ES Modules)](https://v8.dev/features/modules), and [UMD (Universal Module Definition)](https://github.com/umdjs/umd)
+* Bundle modules with [Rollup](https://rollupjs.org) and generate a build for each of [CJS](http://www.commonjs.org/), [ESM](https://v8.dev/features/modules), and [UMD](https://github.com/umdjs/umd)
 * Code linting courtesy of [ESLint](http://eslint.org/)
 * Unit testing with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
-* Code minification via [babel-minify](https://github.com/babel/minify)
+* Code minification via [terser](https://github.com/terser/terser)
 * Includes `.travis.yml` file to support continuous integration with [Travis CI](https://travis-ci.org/)
 * Automatically includes a (configurable) banner to the distributed builds
 

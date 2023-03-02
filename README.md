@@ -8,7 +8,7 @@
 * Code linting courtesy of [ESLint](http://eslint.org/)
 * Unit testing with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
 * Code minification via [terser](https://github.com/terser/terser)
-* Includes `.travis.yml` file to support continuous integration with [Travis CI](https://travis-ci.org/)
+* Includes support for continuous integration testing via [GitHub Actions](https://github.com/features/actions)
 * Automatically includes a (configurable) banner to the distributed builds
 
 ## Setup

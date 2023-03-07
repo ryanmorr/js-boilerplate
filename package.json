@@ -7,13 +7,21 @@
   "homepage": "https://github.com/ryanmorr/js-boilerplate",
   "repository": "github:ryanmorr/js-boilerplate",
   "bugs": "https://github.com/ryanmorr/js-boilerplate/issues",
-  "publishConfig": {
-    "access": "public"
-  },
+  "keywords": [],
   "type": "module",
-  "main": "dist/<foo>.cjs.js",
-  "module": "dist/<foo>.esm.js",
-  "browser": "dist/<foo>.umd.js",
+  "main": "dist/cjs/<insert-name>.js",
+  "module": "dist/esm/<insert-name>.js",
+  "browser": "dist/umd/<insert-name>.js",
+  "exports": {
+    ".": {
+      "browser": "./dist/umd/<insert-name>.js",
+      "import": "./dist/esm/<insert-name>.js",
+      "require": "./dist/cjs/<insert-name>.js"
+    }
+  },
+  "files": [
+    "dist"
+  ],
   "scripts": {
     "lint": "eslint src/** test/specs/**",
     "test": "mocha test/specs/**/*.js --reporter spec",
@@ -27,6 +35,7 @@
     "eslint": "^8.33.0",
     "mocha": "^10.2.0",
     "rollup": "^3.14.0",
+    "rollup-plugin-generate-package-json": "^3.2.0",
     "sinon": "^15.0.1",
     "terser": "^5.16.3"
   }

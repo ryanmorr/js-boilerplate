@@ -5,8 +5,11 @@
   "license": "Unlicense",
   "author": "Ryan Morr",
   "homepage": "https://github.com/ryanmorr/js-boilerplate",
-  "repository": "github:ryanmorr/js-boilerplate",
   "bugs": "https://github.com/ryanmorr/js-boilerplate/issues",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ryanmorr/js-boilerplate.git"
+  },
   "keywords": [],
   "type": "module",
   "main": "dist/cjs/<insert-name>.js",

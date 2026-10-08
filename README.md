@@ -9,7 +9,6 @@
 * Unit testing with [Mocha](http://mochajs.org/), [Chai](http://chaijs.com/), and [Sinon](http://sinonjs.org/)
 * Code minification via [terser](https://github.com/terser/terser)
 * Includes support for continuous integration testing via [GitHub Actions](https://github.com/features/actions)
-* Automatically includes a (configurable) banner to the distributed builds
 
 ## Setup
 
@@ -21,7 +20,7 @@
 
 * `npm test` - Run unit tests
 * `npm run lint` - Lint source files and test specs
-* `npm run build` - Bundle, transpile, and minify the source into the distributed builds
+* `npm run build` - Bundle, compile, and minify the source into the distributed builds
 
 ## License
 

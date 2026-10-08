@@ -1,41 +1,33 @@
-# See http://help.github.com/ignore-files/ for more about ignoring files.
-
-# compiled output
-/tmp
-/out-tsc
-
-# dependencies
+# Dependencies
 /node_modules
 
+# Build output
+/dist
+
 # IDEs and editors
-/.idea
-.project
-.classpath
-.c9/
-*.launch
-.settings/
+.vscode/
+.idea/
+*.swp
+*.swo
+*~
+*.sublime-project
 *.sublime-workspace
 
-# IDE - VSCode
-.vscode/*
-!.vscode/settings.json
-!.vscode/tasks.json
-!.vscode/launch.json
-!.vscode/extensions.json
+# Environment variables
+.env
+.env.local
+.env.*.local
 
-# misc
-/.sass-cache
-/connect.lock
-/coverage
-/libpeerconnection.log
-npm-debug.log
-testem.log
-/typings
+# Testing
+coverage/
+.nyc_output/
+*.lcov
 
-# e2e
-/e2e/*.js
-/e2e/*.map
+# Logs
+logs/
+*.log
+npm-debug.log*
 
-# System Files
-.DS_Store
+# OS files
 Thumbs.db
+.DS_Store

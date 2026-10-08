@@ -6,19 +6,16 @@ import generatePackageJSON from 'rollup-plugin-generate-package-json';
 
 export default async () => {
     const pkg = JSON.parse(await fs.readFile('package.json'));
-    const banner = `/*! ${pkg.name} v${pkg.version} | ${pkg.homepage} */`;
 
     return {
         input: 'src/<insert-name>.js',
         output: [
             {
-                banner,
                 name: '<insert-name>',
                 file: pkg.browser,
                 format: 'umd'
             },
             {
-                banner,
                 file: pkg.main,
                 format: 'cjs',
                 plugins: [
@@ -31,7 +28,6 @@ export default async () => {
                 ]
             },
             {
-                banner,
                 file: pkg.module,
                 format: 'esm'
             }
